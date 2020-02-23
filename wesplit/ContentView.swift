@@ -10,12 +10,14 @@ import SwiftUI
 
 // [struct] is immutable
 struct ContentView: View {
-    @State private var name = ""
+    let students = ["Harry", "Ron"]
+    @State private var selectedStudent = "Ron"
     
     var body: some View {
-        Form {
-            TextField("Enter your name", text: $name)
-            Text("Hello \(name) !")
+        Picker("Select your student", selection: $selectedStudent) {
+            ForEach(0 ..< students.count) {
+                Text(self.students[$0])
+            }
         }
     }
 }
