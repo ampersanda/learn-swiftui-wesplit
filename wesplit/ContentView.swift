@@ -8,9 +8,18 @@
 
 import SwiftUI
 
+// [struct] is immutable
 struct ContentView: View {
+    @State var tapCount = 0;
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Section {
+                    Text("Hello, World!")
+                }
+            }.navigationBarTitle(Text("SwiftUI"))
+        }
     }
 }
 
