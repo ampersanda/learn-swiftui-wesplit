@@ -10,18 +10,12 @@ import SwiftUI
 
 // [struct] is immutable
 struct ContentView: View {
-    @State var tapCount = 0;
+    @State private var name = ""
     
     var body: some View {
-//        NavigationView {
-//            Form {
-//                Section {
-//                    Text("Hello, World!")
-//                }
-//            }.navigationBarTitle(Text("SwiftUI"))
-//        }
-        Button("Tap Count \(tapCount)"){
-            self.tapCount += 1
+        Form {
+            TextField("Enter your name", text: $name)
+            Text("Hello \(name) !")
         }
     }
 }
